@@ -1,3 +1,5 @@
 #!/bin/bash 
 
-docker run -d -P --name "mongodb" group_one/mongodb;
+docker run -d -p 10080:27017 --name "mongodb" \
+-v /home/data/docker/mongodb/data/db:/data/db  \
+group_one/mongodb; 
