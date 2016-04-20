@@ -1,5 +1,5 @@
 #!/bin/bash 
-echo $VOLUME
+echo "mounting volume: "$VOLUME
 
 docker run -d -p 10080:27017 --name "mongodb" \
 -v $VOLUME/data:/data/db  \
