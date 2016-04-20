@@ -1,3 +1,9 @@
 #!/bin/bash
 
-docker build --rm -t group_one/mongodb ./build/;
+cd $(dirname $0)
+
+DIR=$(basename $1)
+
+echo $DIR
+
+#docker build --rm -t group_one/mongodb ./build/;
