@@ -23,6 +23,6 @@ VOLUME=$BASEDIR/$TAG"-"$DIR
 cd "docker"
 
 echo "Running " $DIR " specific run script.. "
-export $VOLUME
+export "$VOLUME"
 . "$DIR/run.sh"
 
