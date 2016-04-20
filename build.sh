@@ -8,10 +8,15 @@ DIR=$(basename $1)
 echo $DIR
 TAG=casper
 VOLUME="/home/data/casper/"$TAG"-"$DIR"/data"
-echo $VOLUME
+echo "moving into.. "$VOLUME
 
-cd $DIR
+if [ ! -d "$DIR" ] || [ ! -f "$DIR/build/Dockerfile" ] ; then
+	echo "Usage: $0 <basedirectory-of-service>"
+	exit 1
+fi
 
 mkdir -p $VOLUME
 
-#docker build --rm -t group_one/mongodb ./build/;
+cd $DIR
+
+docker build --rm -t group_one/$DIR ./build/;
