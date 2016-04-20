@@ -7,7 +7,7 @@ cd $(dirname $0)
 DIR=$(basename $1)
 echo $DIR
 TAG=casper
-VOLUME=$("/home/data/casper/"$TAG"-"$DIR"/data")
+VOLUME="/home/data/casper/"$TAG"-"$DIR"/data"
 echo $VOLUME
 
 cd $DIR
