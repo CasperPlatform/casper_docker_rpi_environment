@@ -11,7 +11,7 @@ if [ ! -d "$DIR" ] || [ ! -f "$DIR/build/Dockerfile" ] ; then
 fi    
 
 # inherit container specific run-configuration?
-if [! -f "$DIR/run.sh" ]; then
+if [ ! -f "$DIR/run.sh" ]; then
 	echo "Missing container specific run script, aborting..."
     exit 1
 fi
