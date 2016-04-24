@@ -3,6 +3,6 @@
 #DATAVOL=$VOLUME"/data"
 
 
-docker run -p 10080:27017 --name "mongodb" \
+docker run -d -p 10080:27017 --name "mongodb" \
 -v "$VOLUME:/data/db"  \
 "$TAG/$DIR" 
