@@ -23,4 +23,6 @@ fi
 echo "moving into.. ./"$DIR
 cd $DIR
 echo "Building Image..."
-docker build --rm -t group_one/$DIR ./build/;
+echo building "$TAG/$DIR"
+docker build --rm -t "$TAG/$DIR" ./build/;
+
