@@ -1,12 +1,12 @@
 [Unit]
-Description=Scrum Collector (/api/scrum)
+Description=Mongodb Container (casper)
 Requires=docker.service
 After=docker.service
 
 
 [Service]
 TimeoutStartSec=2
-ExecStartPre=-/usr/bin/docker stop mongodb  
+ExecStartPre=-/usr/bin/docker stop mongodb
 ExecStartPre=-/usr/bin/docker kill mongodb
 ExecStartPre=-/usr/bin/docker rm mongodb
 ExecStartPre=-/bin/bash /home/data/casper/docker/build.sh mongodb
