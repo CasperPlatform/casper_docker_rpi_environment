@@ -30,7 +30,7 @@ VOLUME ["/data/db"]
 
 
 # Expose MongoDB ports
-EXPOSE 27017 28018
+EXPOSE 27017 28017
 
 # Define default command.
 #CMD ["/usr/bin/mongod","--smallfiles"]
