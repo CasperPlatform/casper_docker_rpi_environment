@@ -33,5 +33,5 @@ WORKDIR /data
 EXPOSE 27017 28018
 
 # Define default command.
-CMD ["/usr/bin/mongod","--smallfiles"]
+#CMD ["/usr/bin/mongod","--smallfiles"]
 ENTRYPOINT usr/bin/mongod
