@@ -19,7 +19,7 @@ MongoClient.connect(url, function(err, db) {
   
 var insertDocuments = function(db, callback) {
   // Get the documents collection 
-  var collection = db.collection('Users');
+  var collection = db.collection('users');
   // Insert some documents 
   collection.insertMany([
     {name : "casper",pass : "casper", token : "32432634823##"}, {a : 2}, {a : 3}
@@ -34,7 +34,7 @@ var insertDocuments = function(db, callback) {
 
 var findDocuments = function(db, callback) {
   // Get the documents collection 
-  var collection = db.collection('documents');
+  var collection = db.collection('users');
   // Find some documents 
   collection.find({}).toArray(function(err, docs) {
     assert.equal(err, null);
