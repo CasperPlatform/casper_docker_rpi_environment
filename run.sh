@@ -16,13 +16,12 @@ if [ ! -f "$DIR/run.sh" ]; then
 	echo "Missing container specific run script, aborting..."
     exit 1
 fi
-cd ..
-BASEDIR=$("pwd")
-VOLUME=$BASEDIR/$TAG"-"$DIR
 
-cd "docker"
+VOLUME="/home/data/casper/"$TAG"-"$DIR"/data"
 
 echo "Running " $DIR " specific run script.. "
 export VOLUME
+export TAG
+export DIR
 . "$DIR/run.sh"
 
