@@ -23,7 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 ###############################
 RUN apt-get install -y mongodb-server
 
-RUN mkdir -p /data/db
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 
 VOLUME ["/data/db"]
 #WORKDIR /data
@@ -34,4 +34,5 @@ EXPOSE 27017 28018
 
 # Define default command.
 #CMD ["/usr/bin/mongod","--smallfiles"]
-ENTRYPOINT usr/bin/mongod
+#ENTRYPOINT usr/bin/mongod
+CMD ["mongod"]

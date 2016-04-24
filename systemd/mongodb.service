@@ -9,9 +9,10 @@ TimeoutStartSec=2
 ExecStartPre=-/usr/bin/docker stop mongodb
 ExecStartPre=-/usr/bin/docker kill mongodb
 ExecStartPre=-/usr/bin/docker rm mongodb
-ExecStartPre=-/bin/bash /home/data/casper/docker/build.sh mongodb
-ExecStart=-/bin/bash /home/data/casper/docker/run.sh mongodb
-ExecStop=-/usr/bin/docker stop mongodb
+ExecStartPre=/bin/bash /home/data/casper/docker/build.sh mongodb
+ExecStart=/bin/bash /home/data/casper/docker/run.sh mongodb
+ExecStop=/usr/bin/docker stop mongodb
+ExecStopPost=/usr/bin/docker rm mongodb
 Restart=always
 RestartSec=30
 
