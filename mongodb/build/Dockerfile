@@ -22,8 +22,8 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 # MongoDB
 ###############################
 RUN apt-get install -y mongodb-server
-
-RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
+COPY repair_db.sh /repair_db.sh
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db && chown mongodb:mongodb /repair_db.sh
 #COPY repair_db.sh /data/db
 VOLUME ["/data/db"]
 #WORKDIR /data
@@ -35,7 +35,7 @@ EXPOSE 27017 28017
 # Define default command.
 #CMD ["/usr/bin/mongod","--smallfiles"]
 #ENTRYPOINT usr/bin/mongod
-COPY repair_db.sh /repair_db.sh
+
 
 ENTRYPOINT ["/repair_db.sh"]
 CMD ["mongod", "--repair"]
