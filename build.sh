@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 cd $(dirname $0)
 
 DIR=$(basename $1)

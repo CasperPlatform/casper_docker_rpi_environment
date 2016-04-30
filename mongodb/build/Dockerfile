@@ -24,7 +24,7 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 RUN apt-get install -y mongodb-server
 
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
-
+COPY repair_db.sh /data/db
 VOLUME ["/data/db"]
 #WORKDIR /data
 
@@ -35,4 +35,7 @@ EXPOSE 27017 28017
 # Define default command.
 #CMD ["/usr/bin/mongod","--smallfiles"]
 #ENTRYPOINT usr/bin/mongod
-CMD ["mongod"]
+COPY docker-entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/repair_db.sh"]
+CMD ["mongod", "--repair"]
