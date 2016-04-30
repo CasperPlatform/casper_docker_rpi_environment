@@ -39,4 +39,4 @@ EXPOSE 27017 28017
 
 
 ENTRYPOINT ["/repair_db.sh"]
-CMD ["mongod", "--repair"]
+CMD ["mongod"]
