@@ -23,7 +23,8 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 ###############################
 RUN apt-get install -y mongodb-server
 COPY repair_db.sh /repair_db.sh
-RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db && chown mongodb:mongodb /repair_db.sh
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db && chown mongodb:mongodb /repair_db.sh \
+&& chmod +x /repair_db.sh
 #COPY repair_db.sh /data/db
 VOLUME ["/data/db"]
 #WORKDIR /data
