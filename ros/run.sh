@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SRC="${PWD}"
-VOL="$SRC/protosrc"
+VOL="$SRC/protosrc/"
 MOUNT="/src/ros"
 
 docker stop rosrpitest && docker rm rosrpitest
