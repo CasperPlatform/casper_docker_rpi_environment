@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y install \
     git \
     libboost-system-dev \
     libboost-thread-dev \
-    build essential
+    build-essential
 COPY .bashrc /root/
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 USER root
