@@ -6,7 +6,7 @@ DIR=$(basename $1)
 echo $DIR
 TAG=casper
 
-if [ "$#" != 1 ] || [ "$#" != 2 ]; then
+if [ "$#" != 1 ] && [ "$#" != 2 ]; then
 	echo "usage: build.sh <servicename> -datadir"
 	echo "or: build.sh <servicename if data dir is not required"
 	exit 1
