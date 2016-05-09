@@ -4,7 +4,8 @@ RUN apt-get update && apt-get -y install \
     cmake \
     git \
     libboost-system-dev \
-    libboost-thread-dev 
+    libboost-thread-dev \
+    build essential
 COPY .bashrc /root/
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 USER root
