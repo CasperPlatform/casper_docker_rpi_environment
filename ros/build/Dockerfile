@@ -8,5 +8,5 @@ RUN apt-get update && apt-get -y install \
 COPY .bashrc /root/
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 USER root
-RUN source /root/.bashrc && mkdir /src && chmod -R 755 /src
+RUN source /root/.bashrc && mkdir -p /src/ros && chmod -R 755 /src
 
