@@ -7,4 +7,4 @@ RUN apt-get update && apt-get -y install \
     libboost-thread-dev 
 COPY .bashrc /root/
 USER root
-RUN source /root/.bashrc    
+#RUN source /root/.bashrc    
