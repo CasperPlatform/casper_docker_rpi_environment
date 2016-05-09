@@ -24,7 +24,7 @@ fi
 SRCFILES="$SRCDIR/rosproto.cpp"
 
 
-COMMAND="g++ $SRCFILES -o build/hello_world_node \
+COMMAND="gcc $SRCFILES -o build/hello_world_node \
 -I/opt/ros/indigo/include -L/opt/ros/indigo/lib -Wl,-rpath,/opt/ros/indigo/lib\
 -lroscpp -lrosconsole -lrostime"
 
