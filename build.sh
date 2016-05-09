@@ -36,4 +36,3 @@ cd $DIR
 echo "Building Image..."
 echo building "$TAG/$DIR"
 docker build --rm -t "$TAG/$DIR" ./build/
-
