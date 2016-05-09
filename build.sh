@@ -23,14 +23,11 @@ if [ "$#" == 2 ] && [ "$2" == "-datadir" ]; then
 		echo "Creating data-dir $VOLUME"
 		mkdir -p $VOLUME
 	fi
-fi
 else if [ "$#" == 2 ] && [ "$2" != "-datadir" ]; then
 	echo "bad parameter"
 	echo "usage: build.sh <servicename> -datadir"
 	echo "or: build.sh <servicename if data dir is not required"
 	exit 1
-else
-	
 fi	 		
 
 
