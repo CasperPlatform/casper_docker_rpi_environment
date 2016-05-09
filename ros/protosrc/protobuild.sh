@@ -27,7 +27,7 @@ SRCFILES="$SRCDIR/rosproto.cpp"
 COMMAND="g++ $SRCFILES -o build/hello_world_node \
 -I/opt/ros/indigo/include -I/usr/include -L/usr/lib \
 -L/opt/ros/indigo/lib -L/usr/lib/arm-linux-gnueabihf -Wl,-rpath,/opt/ros/indigo/lib  \
--lboost_system -lboost_thread-mt -lpthread -lroscpp -lrosconsole -lrostime"
+-lboost_system -lboost_thread -lpthread -lroscpp -lrosconsole -lrostime"
 
 #COMMAND="gcc -o build/sens src/mqttClient.c \
 #-I/usr/local/include  "-I$MQQTINCLUDE/" "$MQQTADDITIONAL" \
