@@ -1,7 +1,9 @@
 #!/bin/bash
 
-SRC="${PWD}"
-VOL="$SRC/protosrc/"
+
+cd $(dirname $0)
+BASEDIR="${PWD}"
+VOL="$BASEDIR/protosrc/"
 MOUNT="/src/ros"
 
 docker stop rosrpitest && docker rm rosrpitest
