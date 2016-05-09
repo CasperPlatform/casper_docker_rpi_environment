@@ -9,6 +9,6 @@ RUN apt-get update && apt-get -y install \
 COPY .bashrc /root/
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 USER root
-RUN source /root/.bashrc && /opt/ros/indigo/setup.sh \
+RUN source /root/.bashrc && chmod -R 711 /opt && /opt/ros/indigo/setup.sh \
 && mkdir -p /src/ros && chmod -R 755 /src
 
