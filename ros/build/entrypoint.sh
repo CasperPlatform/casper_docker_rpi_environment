@@ -3,9 +3,10 @@ set -e
 
 INDIGO=/opt/ros/indigo
 SRC=/src/ros/
+cd $INDIGO && source setup.sh
 
 if [ "$1" == "buildrun" ]; then
-	cd $INDIGO && source setup.sh
+	
 	echo "building.."
 	cd $SRC && make
 	if [ ! -f $SRC/build/lidarserver ]; then
@@ -18,10 +19,8 @@ elif [ "$1" == "run" ]; then
 		echo "no executable present..."
 		exit 1
 	fi
-	cd $INDIGO && source setup.sh
 	exec $SRC/build/lidarserver
 fi
-else
-	exec bash
+exec bash
 
 #exec "$@"
