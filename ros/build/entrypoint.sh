@@ -19,6 +19,7 @@ elif [ "$1" == "run" ]; then
 		echo "no executable present..."
 		exit 1
 	fi
+	cd $INDIGO && source setup.sh
 	exec $SRC/build/lidarserver
 fi
 exec bash
