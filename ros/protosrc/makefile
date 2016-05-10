@@ -27,7 +27,7 @@ INCLUDEDIR += /opt/ros/indigo/include
 INCLUDEDIR += /usr/include
 
 
-OPT = -std=c++11
+#OPT = -std=c++11
 DEBUG = -g
 WARN= -Wall
 #PTHREAD= -pthread
