@@ -2,7 +2,7 @@ SRCDIR=/src/ros
 CC   = g++
 SRC += $(SRCDIR)/src/rosproto.cpp 
 
-TARGET = $(SRCDIR)/build/driveserver
+TARGET = $(SRCDIR)/build/test_node
 
 LIBRARY += boost_system
 LIBRARY += boost_date_time
@@ -27,10 +27,10 @@ INCLUDEDIR += /opt/ros/indigo/include
 INCLUDEDIR += /usr/include
 
 
-#OPT = -std=c++11
+OPT = -std=c++11
 DEBUG = -g
 WARN= -Wall
-#PTHREAD= -pthread
+PTHREAD= -pthread
 LINK    = -Wl,-rpath,
 
 INCDIR  = $(patsubst %,-I%,$(INCLUDEDIR))
@@ -39,7 +39,7 @@ LIB    = $(patsubst %,-l%,$(LIBRARY))
 LINKDIR = $(patsubst %,$(LINK)%,$(LINK_LIBDIR))
 
 all:
-	$(CC) $(OPT) $(DEBUG) $(LIBDIR) $(PTHREAD) $(INCDIR) $(LINKDIR) $(LIB) $(SRC) -o $(TARGET)
+	$(CC) $(SRC) -o $(TARGET) $(INCDIR) $(LIBDIR) $(LINKDIR) $(LIB) 
 
 clean:
 	rm -rf $(TARGET)
