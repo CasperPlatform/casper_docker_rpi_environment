@@ -7,17 +7,17 @@ cd $INDIGO && source setup.sh
 
 if [ "$1" == "buildrun" ]; then
 	
-	echo "building.."
+	echo "building.." 2>&1
 	cd $SRC && make
 	if [ ! -f $SRC/build/lidarserver ]; then
-		echo "build failed..."
+		echo "build failed..." 2>&1
 		exit 1
 	fi	
 	exec roscore
 	exec $SRC/build/lidarserver
 elif [ "$1" == "run" ]; then
 	if [ ! -f $SRC/build/lidarserver ]; then
-		echo "no executable present..."
+		echo "no executable present..." 2>&1
 		exit 1
 	fi
 	exec $SRC/build/lidarserver
