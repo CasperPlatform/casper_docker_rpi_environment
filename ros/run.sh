@@ -7,6 +7,7 @@ VOL="$BASEDIR/protosrc/"
 MOUNT="/src/ros"
 
 if [ "$#" == 0 ]; then 
+	echo "no params, cmd=bash"
 	PAR=bash
 else
 	PAR=$1
