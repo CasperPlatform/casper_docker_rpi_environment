@@ -1,4 +1,4 @@
-SRCDIR=/src/ros/protosrc
+SRCDIR=/src/ros
 CC   = g++
 SRC += $(SRCDIR)/src/rosproto.cpp 
 
