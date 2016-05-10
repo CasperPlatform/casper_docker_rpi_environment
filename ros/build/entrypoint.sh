@@ -13,7 +13,7 @@ if [ "$1" == "buildrun" ]; then
 		echo "build failed..."
 		exit 1
 	fi	
-	roscore
+	exec roscore
 	exec $SRC/build/lidarserver
 elif [ "$1" == "run" ]; then
 	if [ ! -f $SRC/build/lidarserver ]; then
