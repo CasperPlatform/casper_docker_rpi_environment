@@ -13,7 +13,6 @@ if [ "$1" == "buildrun" ]; then
 		exit 1
 	fi	
 	exec $SRC/build/lidarserver
-	
 elif [ "$1" == "run" ]; then
 	if [ ! -f $SRC/build/lidarserver ]; then
 		echo "no executable present..."
@@ -22,5 +21,7 @@ elif [ "$1" == "run" ]; then
 	cd $INDIGO && source setup.sh
 	exec $SRC/build/lidarserver
 fi
-exec bash
+else
+	exec bash
+
 #exec "$@"
