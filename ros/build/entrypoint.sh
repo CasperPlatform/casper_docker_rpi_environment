@@ -6,6 +6,7 @@ SRC=/src/ros/
 
 if [ "$1" == "buildrun" ]; then
 	cd $INDIGO && source setup.sh
+	echo "building.."
 	cd $SRC && make
 	if [ ! -f $SRC/build/lidarserver ]; then
 		echo "build failed..."

@@ -15,6 +15,7 @@ else
 fi
 
 docker stop rosrpitest && docker rm rosrpitest
+echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT casper/ros $PAR"
 docker run -d --name rosrpitest -it -v $VOL:$MOUNT casper/ros $PAR
 #docker exec --user root rosrpitest /bin/sh -c "source /opt/ros/indigo/setup.sh;"
 
