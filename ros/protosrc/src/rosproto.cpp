@@ -19,14 +19,14 @@ boost::asio::io_service io_service;
  return 0;
 }
 
-g++ -g /src/ros/src/rosproto.cpp -o /src/ros/build/driveserver -I/opt/ros/indigo/include \
--I/usr/include -L/usr/lib -L/opt/ros/indigo/lib -L/usr/lib/arm-linux-gnueabihf \
--Wl,-rpath,/opt/ros/indigo/lib \
--lboost_system -lboost_date_time -lboost_thread -lpthread -lroscpp \
--lrosconsole -lrostime   
+// g++ -g /src/ros/src/rosproto.cpp -o /src/ros/build/driveserver -I/opt/ros/indigo/include \
+// -I/usr/include -L/usr/lib -L/opt/ros/indigo/lib -L/usr/lib/arm-linux-gnueabihf \
+// -Wl,-rpath,/opt/ros/indigo/lib \
+// -lboost_system -lboost_date_time -lboost_thread -lpthread -lroscpp \
+// -lrosconsole -lrostime   
 
 
-g++ /src/ros/src/rosproto.cpp -o build/hello_world_node -I/opt/ros/indigo/include \
--I/usr/include -L/usr/lib -L/opt/ros/indigo/lib -L/usr/lib/arm-linux-gnueabihf \
--Wl,-rpath,/opt/ros/indigo/lib  -lboost_system -lboost_thread -lpthread -lroscpp \
--lrosconsole -lrostime
+// g++ /src/ros/src/rosproto.cpp -o build/hello_world_node -I/opt/ros/indigo/include \
+// -I/usr/include -L/usr/lib -L/opt/ros/indigo/lib -L/usr/lib/arm-linux-gnueabihf \
+// -Wl,-rpath,/opt/ros/indigo/lib  -lboost_system -lboost_thread -lpthread -lroscpp \
+// -lrosconsole -lrostime
