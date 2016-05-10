@@ -2,7 +2,7 @@ SRCDIR=/src/ros
 CC   = g++
 SRC += $(SRCDIR)/src/rosproto.cpp 
 
-TARGET = $(SRCDIR)/build/test_node
+TARGET = $(SRCDIR)/build/lidarserver
 
 LIBRARY += boost_system
 LIBRARY += boost_date_time
