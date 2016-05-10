@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -x
 
 INDIGO=/opt/ros/indigo
 SRC=/src/ros/
