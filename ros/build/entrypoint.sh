@@ -8,7 +8,7 @@ cd $INDIGO && source setup.sh
 
 if [ "$1" == "buildrun" ]; then
 	
-	echo "building.." 2>&1
+	logger -s "building.." 
 	cd $SRC && make
 	if [ ! -f $SRC/build/lidarserver ]; then
 		echo "build failed..." 2>&1
