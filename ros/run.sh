@@ -3,7 +3,7 @@
 
 cd $(dirname $0)
 BASEDIR="${PWD}"
-VOL="$BASEDIR/protosrc/"
+VOL="/home/data/casper/c++"
 MOUNT="/src/ros"
 
 if [ "$#" == 0 ]; then 
