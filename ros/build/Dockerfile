@@ -13,5 +13,5 @@ USER root
 RUN source /root/.bashrc && chmod -R 711 /opt && ./opt/ros/indigo/setup.sh \
 && mkdir -p /src/ros && chmod -R 755 /src && chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["bash","-rcfile","/entrypoint.sh"]
 CMD ["bash"]
