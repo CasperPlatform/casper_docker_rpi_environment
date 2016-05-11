@@ -92,6 +92,17 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export ROS_MASTER_URI=http://localhost:11311
+export ROS_ROOT=/opt/ros/indigo/share/ros
+export ROS_PACKAGE_PATH=/opt/ros/indigo/share:/opt/ros/indigo/stacks
+export LD_LIBRARY_PATH=/opt/ros/indigo/lib:/opt/ros/indigo/lib/arm-linux-gnueabihf
+export CPATH=/opt/ros/indigo/include
+export PATH=/opt/ros/indigo/bin:$PATH
+export ROSLISP_PACKAGE_DIRECTORIES=
+export ROS_DISTRO=indigo
+export PYTHONPATH=/opt/ros/indigo/lib/python2.7/dist-packages
+export PKG_CONFIG_PATH=/opt/ros/indigo/lib/pkgconfig:/opt/ros/indigo/lib/arm-linux-gnueabihf/pkgconfig
+export CMAKE_PREFIX_PATH=/opt/ros/indigo
+export ROS_ETC_DIR=/opt/ros/indigo/etc/ros
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
