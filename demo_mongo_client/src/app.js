@@ -1,26 +1,29 @@
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 
-// Connection URL 
+// Connection URL
 var url = 'mongodb://127.0.0.1:10080/casper';
-// Use connect method to connect to the Server 
+// Use connect method to connect to the Server
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
   console.log("Connected correctly to server");
-  insertDocuments(db, function() {
-      findDocuments(db, function(res){
-         
-         db.close(); 
-      });
- 
-  });  
-  
-});  
-  
+  findDocuments(db, function(res){
+	db.close();
+  });
+ //insertDocuments(db, function() {
+      //findDocuments(db, function(res){
+
+         //db.close();
+      //});
+
+  //});
+
+});
+
 var insertDocuments = function(db, callback) {
-  // Get the documents collection 
+  // Get the documents collection
   var collection = db.collection('users');
-  // Insert some documents 
+  // Insert some documents
   collection.insertMany([
     {name : "casper",pass : "casper", token : "32432634823##"}, {a : 2}, {a : 3}
   ], function(err, result) {
@@ -30,12 +33,12 @@ var insertDocuments = function(db, callback) {
     console.log("Inserted 3 documents into the document collection");
     callback(result);
   });
-}  
+}
 
 var findDocuments = function(db, callback) {
-  // Get the documents collection 
+  // Get the documents collection
   var collection = db.collection('users');
-  // Find some documents 
+  // Find some documents
   collection.find({}).toArray(function(err, docs) {
     assert.equal(err, null);
     //assert.equal(2, docs.length);
