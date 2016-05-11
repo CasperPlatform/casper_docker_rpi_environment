@@ -17,7 +17,7 @@ if [ "$1" == "buildrun" ]; then
 	fi	
 	exec roscore &
 	sleep 5
-	exec $SRC/build/lidarserver
+	exec $LIDARSRC/build/lidarserver
 elif [ "$1" == "run" ]; then
 	if [ ! -f $LIDARSRC/build/lidarserver ]; then
 		echo "no executable present..." 2>&1
