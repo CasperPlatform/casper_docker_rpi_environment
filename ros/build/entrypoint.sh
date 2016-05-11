@@ -16,7 +16,7 @@ if [ "$1" == "buildrun" ]; then
 		exit 1
 	fi	
 	exec roscore &
-	sleep 5
+	sleep 8
 	exec $LIDARSRC/build/lidarserver
 elif [ "$1" == "run" ]; then
 	if [ ! -f $LIDARSRC/build/lidarserver ]; then
