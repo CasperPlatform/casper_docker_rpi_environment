@@ -4,12 +4,13 @@ set -x
 
 INDIGO=/opt/ros/indigo
 SRC=/src/ros/
+LIDARSRC=$SRC/lidarserver
 cd $INDIGO && source setup.sh
 
 if [ "$1" == "buildrun" ]; then
 	
 	echo "building.." >> /dev/stdout 
-	cd $SRC && make
+	cd $LIDARSRC && make
 	if [ ! -f $SRC/build/lidarserver ]; then
 		echo "build failed..." 2>&1
 		exit 1
