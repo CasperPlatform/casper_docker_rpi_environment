@@ -3,7 +3,7 @@ set -e
 set -x
 
 INDIGO=/opt/ros/indigo
-SRC=/src/ros/
+SRC=/src/ros
 LIDARSRC=$SRC/lidarserver
 cd $INDIGO && source setup.sh
 
@@ -11,14 +11,14 @@ if [ "$1" == "buildrun" ]; then
 	
 	echo "building.." >> /dev/stdout 
 	cd $LIDARSRC && make
-	if [ ! -f $SRC/build/lidarserver ]; then
+	if [ ! -f $LIDARSRC/build/lidarserver ]; then
 		echo "build failed..." 2>&1
 		exit 1
 	fi	
 	exec roscore
 	exec $SRC/build/lidarserver
 elif [ "$1" == "run" ]; then
-	if [ ! -f $SRC/build/lidarserver ]; then
+	if [ ! -f $LIDARSRC/build/lidarserver ]; then
 		echo "no executable present..." 2>&1
 		exit 1
 	fi
