@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y install \
     libboost-thread-dev \
     build-essential 
 
-RUN sudo rosdep fix-permissions \
+RUN rosdep fix-permissions \
 	&& rosdep init \
     && rosdep update
 
