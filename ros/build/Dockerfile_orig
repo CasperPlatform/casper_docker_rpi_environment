@@ -1,20 +1,11 @@
-FROM ubuntu:14.04
+FROM proboter/indigo-ros-base-armv7
 
-RUN update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX \
-&& echo "deb http://packages.ros.org/ros/ubuntu trusty main" \
-> /etc/apt/sources.list.d/ros-latest.list \
-&& apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116 \
 RUN apt-get update && apt-get -y install \
-	ros-indigo-ros-base \
-	python-rosdep \
     cmake \
     git \
     libboost-system-dev \
     libboost-thread-dev \
-    build-essential \
-    && rosdep init \
-    && rosdep update
-
+    build-essential
 COPY .bashrc /root/
 COPY entrypoint.sh /
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
