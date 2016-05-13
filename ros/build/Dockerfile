@@ -11,8 +11,10 @@ RUN apt-get update && apt-get -y install \
     git \
     libboost-system-dev \
     libboost-thread-dev \
-    build-essential \
-    && rosdep init \
+    build-essential 
+
+RUN sudo rosdep fix-permissions \
+	&& rosdep init \
     && rosdep update
 
 COPY .bashrc /root/
