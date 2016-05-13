@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 RUN update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX \
 && echo "deb http://packages.ros.org/ros/ubuntu trusty main" \
 > /etc/apt/sources.list.d/ros-latest.list \
-&& apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116 \
+&& apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116 
 RUN apt-get update && apt-get -y install \
 	ros-indigo-ros-base \
 	python-rosdep \
