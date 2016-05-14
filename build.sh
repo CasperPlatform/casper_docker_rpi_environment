@@ -4,11 +4,12 @@ cd $(dirname $0)
 
 DIR=$(basename $1)
 echo $DIR
+
 TAG=casper
 
 if [ "$#" != 1 ] && [ "$#" != 2 ]; then
 	echo "usage: build.sh <servicename> -datadir"
-	echo "or: build.sh <servicename if data dir is not required"
+	echo "or: build.sh <servicename> if data dir is not required"
 	exit 1
 fi	
 
@@ -33,4 +34,8 @@ echo "moving into.. ./"$DIR
 cd $DIR
 echo "Building Image..."
 echo building "$TAG/$DIR"
-docker build --rm -t "$TAG/$DIR" ./build
+if [ "$DIR" == "rosemu" ]; then
+	./run.sh
+else
+	docker build --rm -t "$TAG/$DIR" ./build
+fi	
