@@ -25,6 +25,7 @@ if [ "$1" == "buildrun" ]; then
 		echo "build failed..." 2>&1
 		exit 1
 	fi	
+	echo "driveserver built.. executing" >> /dev/stdout
 	exec $DRIVESRC/build/driveserver
 
 elif [ "$1" == "run" ]; then
