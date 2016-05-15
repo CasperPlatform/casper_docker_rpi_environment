@@ -11,7 +11,7 @@ RUN apt-get update && apt-get -y install \
     git \
     libboost-system-dev \
     libboost-thread-dev \
-    build-essential \
+    build-essential 
 
 RUN apt-get -y install ros-indigo-hector-slam
 RUN rosdep fix-permissions \
