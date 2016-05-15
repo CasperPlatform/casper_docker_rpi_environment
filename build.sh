@@ -37,5 +37,5 @@ echo building "$TAG/$DIR"
 if [ "$DIR" == "rosemu" ]; then
 	./run.sh
 else
-	docker build --rm -t "$TAG/$DIR" ./build
+	docker build -t "$TAG/$DIR" ./build
 fi	
