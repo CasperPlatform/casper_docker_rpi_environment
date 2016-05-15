@@ -1,5 +1,4 @@
 FROM hominidae/armhf-ubuntu
-RUN /bin/bash
 RUN update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX 
 RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" \
 > /etc/apt/sources.list.d/ros-latest.list 
