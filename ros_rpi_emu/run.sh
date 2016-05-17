@@ -9,8 +9,8 @@ QEMUMOUNT=/usr/bin/qemu-arm-static
 SRCDIR=$1
 SRCMOUNT=/root/catkin_ws/src
 
-SRCMOUNT
-echo "Starting container an spawning a shell"
+
+echo "Starting container and spawning a shell"
 docker pull corroleaus/casper-ros:beta
 docker stop rpi_ros_emulator && docker rm rpi_ros_emulator
 docker run --name rpi_ros_emulator \
