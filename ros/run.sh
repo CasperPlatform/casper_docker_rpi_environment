@@ -3,8 +3,8 @@
 
 cd $(dirname $0)
 BASEDIR="${PWD}"
-VOL="/home/data/casper/c++"
-MOUNT="/src/ros"
+VOL="/home/data/casper/c++/p0015"
+MOUNT="/root/catkin_ws/src"
 
 if [ "$#" == 0 ]; then 
 	echo "no params, cmd=bash"
