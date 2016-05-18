@@ -12,8 +12,15 @@ RUN apt-get update && apt-get -y install \
     libboost-system-dev \
     libboost-thread-dev \
     build-essential \
-    ros-indigo-hector-slam
+    ros-indigo-hector-slam \
+    wget \
+    unzip
 
+RUN cd /tmp \
+&& wget http://jaist.dl.sourceforge.net/project/raspicam/raspicam-0.1.3.zip \
+&& unzip raspicam-0.1.3.zip -d . && cd raspicam-0.1.3 && chmod -R 755 /tmp/raspicam-0.1.3 \
+&& mkdir build && cd build && cmake .. \
+&& make && make install && ldconfig
 RUN rosdep fix-permissions \
 	&& rosdep init \
     && rosdep update

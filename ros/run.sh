@@ -13,7 +13,7 @@ else
 	echo "par is $1"
 	PAR=$1
 fi
-USBDIR=/dev/ttyAMA0
+USBDIR=/dev/ttyUSB0
 USBMOUNT=/dev/ttyUSB0
 
 docker stop rosrpitest && docker rm rosrpitest
