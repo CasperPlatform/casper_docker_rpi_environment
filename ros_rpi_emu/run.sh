@@ -11,9 +11,18 @@ SRCMOUNT=/root/catkin_ws/src
 USBDIR=$2
 USBMOUNT=/dev/ttyUSB0
 
+ARCH=$(uname)
+echo "$ARCH"
+
 echo "Starting container and spawning a shell"
 docker pull corroleaus/casper-ros:beta
 docker stop rpi_ros_emulator && docker rm rpi_ros_emulator
-docker run --name rpi_ros_emulator \
--v $QEMUVOL:$QEMUMOUNT -v $SRCDIR:$SRCMOUNT --device=$USBDIR:$USBMOUNT \
--it corroleaus/casper-ros:beta
+if [ ! "$ARCH" == "Darwin" || "$#" == 2 ]; then
+	docker run --name rpi_ros_emulator \
+	-v $QEMUVOL:$QEMUMOUNT -v $SRCDIR:$SRCMOUNT --device=$USBDIR:$USBMOUNT \
+	-it corroleaus/casper-ros:beta
+else
+	docker run --name rpi_ros_emulator \
+	-v $QEMUVOL:$QEMUMOUNT -v $SRCDIR:$SRCMOUNT \
+	-it corroleaus/casper-ros:beta
+fi
