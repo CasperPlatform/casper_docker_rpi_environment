@@ -16,6 +16,7 @@ RUN apt-get update && apt-get -y install \
     wget \
     unzip
 
+COPY /opt/vc /opt/vc 
 RUN cd /tmp \
 && wget http://jaist.dl.sourceforge.net/project/raspicam/raspicam-0.1.3.zip \
 && unzip raspicam-0.1.3.zip -d . && cd raspicam-0.1.3 && chmod -R 755 /tmp/raspicam-0.1.3 \
