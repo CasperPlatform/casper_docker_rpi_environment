@@ -37,7 +37,8 @@ elif [ "$1" == "run" ]; then
 fi
 
 mkdir -p /root/catkin_ws/src
-mkdir -p /root/src
+mkdir -p /root/restful
+mkdir -p /root/cpp
 
 exec bash
 

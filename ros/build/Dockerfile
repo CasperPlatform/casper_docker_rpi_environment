@@ -27,6 +27,7 @@ RUN rosdep fix-permissions \
     && rosdep update
 
 COPY .bashrc /root/
+
 COPY ./entrypoint.sh  /
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 USER root
