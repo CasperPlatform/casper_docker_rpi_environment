@@ -6,6 +6,7 @@ INDIGO=/opt/ros/indigo
 SRC=/src/ros
 LIDARSRC=$SRC/lidarserver
 DRIVESRC=$SRC/driveserver
+RESTFULSRC=/root/restful/server
 cd $INDIGO && source setup.sh
 
 if [ "$1" == "buildrun" ]; then
@@ -34,6 +35,8 @@ elif [ "$1" == "run" ]; then
 		exit 1
 	fi
 	exec $SRC/build/lidarserver
+	
+	python $RESTFULSRC/restful.py &
 fi
 
 mkdir -p /root/catkin_ws/src

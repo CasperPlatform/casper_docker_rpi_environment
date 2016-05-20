@@ -35,7 +35,6 @@ RUN source /root/.bashrc && chmod -R 711 /opt && ./opt/ros/indigo/setup.sh \
 && mkdir -p /src/ros && chmod -R 755 /src && chmod +x /entrypoint.sh
 EXPOSE 6000 9998 9999 10000
 RUN apt-get -y install python-pip python-dev && pip install flask flask-restful
-RUN python /root/restful/server/restful.py &
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
