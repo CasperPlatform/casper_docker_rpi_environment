@@ -11,6 +11,7 @@ RUN apt-get update && apt-get -y install \
     git \
     libboost-system-dev \
     libboost-thread-dev \
+    libboost-all-dev \
     build-essential \
     ros-indigo-hector-slam \
     wget \
