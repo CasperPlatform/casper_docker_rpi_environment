@@ -6,9 +6,9 @@ BASEDIR="${PWD}"
 VOL=/home/data/casper/p0015
 RESTVOL=/home/data/casper/p0006
 CPPVOL=/home/data/casper/p0010
-MOUNT=/root/catkin_ws/src
-RESTMOUNT=/root/src/restful
-CPPMOUNT=/root/src/cpp
+MOUNT=/home/builder/catkin_ws/src
+RESTMOUNT=/home/builder/src/restful
+CPPMOUNT=/home/builder/src/cpp
 
 
 
@@ -23,7 +23,7 @@ USBDIR=/dev/ttyUSB0
 USBMOUNT=/dev/ttyUSB0
 
 DBDIR=/home/data/casper/db.db
-DBMOUNT=/root/db.db
+DBMOUNT=/home/builder/db.db
 
 docker stop rosrpitest && docker rm rosrpitest
 echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
