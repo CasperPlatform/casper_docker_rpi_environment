@@ -23,7 +23,7 @@ USBDIR=/dev/ttyUSB0
 USBMOUNT=/dev/ttyUSB0
 
 DBDIR=/home/data/casper/db.db
-DBMOUNT=/root/db.db
+DBMOUNT=/home/casper/db.db
 
 docker stop rosrpitest && docker rm rosrpitest
 echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
