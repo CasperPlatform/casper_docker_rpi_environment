@@ -26,7 +26,8 @@ DBDIR=/home/data/casper/db.db
 DBMOUNT=/root/db.db
 
 docker stop rosrpitest && docker rm rosrpitest
-echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT casper/ros $PAR"
+echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
+-v $DBDIR:$DBMOUNT -p 9999:9999/udp -p 6000:6000/udp -p 9998:9998/udp -p 10000:10000 casper/ros $PAR"
 #docker run -d --name rosrpitest -it -v $VOL:$MOUNT casper/ros $
 docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
 -v $DBDIR:$DBMOUNT -p 9999:9999/udp -p 6000:6000/udp -p 9998:9998/udp -p 10000:10000 casper/ros $PAR
