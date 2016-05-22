@@ -6,9 +6,9 @@ BASEDIR="${PWD}"
 VOL=/home/data/casper/p0015
 RESTVOL=/home/data/casper/p0006
 CPPVOL=/home/data/casper/p0010
-MOUNT=/root/catkin_ws/src
-RESTMOUNT=/root/restful
-CPPMOUNT=/root/cpp
+MOUNT=/home/builder/catkin_ws/src
+RESTMOUNT=/home/builder/src/restful
+CPPMOUNT=/home/builder/src/cpp
 
 
 
