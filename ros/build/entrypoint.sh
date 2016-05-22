@@ -48,7 +48,7 @@ exec roscore &
 #mkdir /home/builder/src/cpp
 #mkdir -p /root/cpp
 
-python home/builder/src/restful/server/restful.py &
+python /home/builder/src/restful/server/restful.py &
 
 exec bash
 
