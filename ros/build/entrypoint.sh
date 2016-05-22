@@ -37,20 +37,23 @@ elif [ "$1" == "run" ]; then
 	
 fi
 
-mkdir -p /home/builder/catkin_ws/src
-mkdir -p /home/builder/src
-chown -R builder:builder /home/builder
-chmod -R 755 /home/builder/src
-chmod -R 755 /home/builder/catkin_ws
+mkdir -p /root/catkin_ws/src
+mkdir -p /root/src
+#chown -R builder:builder /home/builder
+chmod -R 755 /root/src
+chmod -R 755 /root/catkin_ws
 #usermod -a -G root builder
-usermod -a -G dialout builder
+#usermod -a -G dialout builder
 #sudo usermod -a -G sudo builder
-chmod 666 /dev/ttyUSB0
+#chmod 666 /dev/ttyUSB0
 exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
 #mkdir -p /root/cpp
 
+cd /root/catkin_ws && catkin_make --pkg casper_lidar_scanner_driver
+
+# start rest-server
 python /home/builder/src/restful/server/restful.py &
 
 exec bash
