@@ -26,14 +26,14 @@ RUN rosdep fix-permissions \
 	&& rosdep init \
     && rosdep update
 
-COPY ./entrypoint.sh  /
+
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
 && adduser --disabled-password --gecos "" builder
 
 EXPOSE 6000/udp 9998/udp 9999/udp 10000
 RUN apt-get -y install python-pip python-dev && pip install flask flask-restful
 
-RUN chmod -R 755 /opt && chmod +x /entrypoint.sh 
+RUN chmod -R 755 /opt 
 USER builder
 
 RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
@@ -42,7 +42,9 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
 && echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc \
 && echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
 && . ~/.bashrc
-
+USER root
+COPY ./entrypoint.sh  / 
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
