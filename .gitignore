@@ -1,2 +1,4 @@
 /data
 /demo_mongo_client/node_modules
+ros/build/Dockerfile.orig
+ros/build/entrypoint.sh.orig
