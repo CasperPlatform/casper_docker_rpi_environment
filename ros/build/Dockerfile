@@ -43,9 +43,10 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 && echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
 && . ~/.bashrc
 USER root
+COPY ./assets/envi.sh /
 COPY ./entrypoint.sh / 
-COPY assets/buildsrc.sh / 
-RUN chmod +x /entrypoint.sh && chmod +x /buildsrc.sh
+COPY ./assets/buildsrc.sh / 
+RUN chmod +x /entrypoint.sh && chmod +x /buildsrc.sh && chmod +x /envi.sh 
 
 
 WORKDIR /
