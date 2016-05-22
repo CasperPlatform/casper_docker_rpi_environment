@@ -39,11 +39,13 @@ fi
 
 mkdir -p /home/builder/catkin_ws/src
 mkdir -p /home/builder/src
+chmod -R builder:builder /home/builder
+exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
 #mkdir -p /root/cpp
 
-#python home/builder/src/restful/server/restful.py &
+python home/builder/src/restful/server/restful.py &
 
 exec bash
 
