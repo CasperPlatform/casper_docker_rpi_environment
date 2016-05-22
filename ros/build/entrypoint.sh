@@ -42,7 +42,7 @@ mkdir -p /home/builder/src
 chown -R builder:builder /home/builder
 chmod -R 755 /home/builder/src
 chmod -R 755 /home/builder/catkin_ws
-useradd -G root builder
+usermod -a -G root builder
 exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
