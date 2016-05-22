@@ -43,6 +43,7 @@ chown -R builder:builder /home/builder
 chmod -R 755 /home/builder/src
 chmod -R 755 /home/builder/catkin_ws
 usermod -a -G root builder
+usermod -a -G dialout builder
 exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
