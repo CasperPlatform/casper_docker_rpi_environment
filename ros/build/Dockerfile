@@ -44,7 +44,9 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 && . ~/.bashrc
 USER root
 COPY ./entrypoint.sh  / 
-RUN chmod +x /entrypoint.sh 
+COPY assets/buildsrc.sh / 
+RUN chmod +x /entrypoint.sh && chmod +x /buildsrc.sh
+
 
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]

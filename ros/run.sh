@@ -6,9 +6,9 @@ BASEDIR="${PWD}"
 VOL=/home/data/casper/p0015
 RESTVOL=/home/data/casper/p0006
 CPPVOL=/home/data/casper/p0010
-MOUNT=/root/catkin_ws/src
-RESTMOUNT=/root/src/restful
-CPPMOUNT=/root/src/cpp
+MOUNT=/home/builder/catkin_ws/src
+RESTMOUNT=/home/builder/src/restful
+CPPMOUNT=/home/builder/src/cpp
 
 
 
@@ -23,7 +23,7 @@ USBDIR=/dev/ttyUSB0
 USBMOUNT=/dev/ttyUSB0
 
 DBDIR=/home/data/casper/db.db
-DBMOUNT=/root/db.db
+DBMOUNT=/home/builder/db.db
 
 docker stop rosrpitest && docker rm rosrpitest
 echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
@@ -32,5 +32,5 @@ echo "running: docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$R
 docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CPPVOL:$CPPMOUNT --device=$USBDIR:$USBMOUNT \
 -v $DBDIR:$DBMOUNT -p 9999:9999/udp -p 6000:6000/udp -p 9998:9998/udp -p 10000:10000 casper/ros $PAR
 #docker exec --user root rosrpitest /bin/sh -c "source /opt/ros/indigo/setup.sh;"
-
-docker exec -it --user root rosrpitest bash
+docker exec -it --user builder rosrpitest bash -v /buildsrc.sh
+docker exec -it --user builder rosrpitest bash
