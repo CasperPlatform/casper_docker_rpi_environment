@@ -43,7 +43,7 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
 && echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
 && . ~/.bashrc
 USER root
-COPY ./entrypoint.sh   / 
+COPY ./entrypoint.sh / 
 RUN chmod +x /entrypoint.sh
 
 WORKDIR /
