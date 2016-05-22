@@ -39,7 +39,7 @@ fi
 
 mkdir -p /home/builder/catkin_ws/src
 mkdir -p /home/builder/src
-chmod -R builder:builder /home/builder
+chown -R builder:builder /home/builder
 exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
