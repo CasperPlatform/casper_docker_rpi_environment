@@ -34,10 +34,14 @@ elif [ "$1" == "run" ]; then
 		exit 1
 	fi
 	exec $SRC/build/lidarserver
+	
 fi
 
 mkdir -p /home/builder/catkin_ws/src
 mkdir -p /home/builder/src
+mkdir -p /root/cpp
+
+python root/restful/server/restful.py &
 
 exec bash
 
