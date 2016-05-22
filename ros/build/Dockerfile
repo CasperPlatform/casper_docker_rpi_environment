@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -y install \
     wget \
     unzip
 
-COPY vc /opt/vc 
+COPY /opt/vc /opt/vc 
 RUN cd /tmp \
 && wget http://jaist.dl.sourceforge.net/project/raspicam/raspicam-0.1.3.zip \
 && unzip raspicam-0.1.3.zip -d . && cd raspicam-0.1.3 && chmod -R 755 /tmp/raspicam-0.1.3 \
@@ -26,14 +26,23 @@ RUN rosdep fix-permissions \
 	&& rosdep init \
     && rosdep update
 
-COPY .bashrc /root/
 COPY ./entrypoint.sh  /
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-USER root
-RUN source /root/.bashrc && chmod -R 711 /opt && ./opt/ros/indigo/setup.sh \
-&& mkdir -p /src/ros && chmod -R 755 /src && chmod +x /entrypoint.sh
-EXPOSE 6000 9998 9999 10000
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
+&& adduser --disabled-password --gecos "" builder
+
+EXPOSE 6000/udp 9998/udp 9999/udp 10000
 RUN apt-get -y install python-pip python-dev && pip install flask flask-restful
+
+USER builder
+RUN chmod -R 755 /opt && chmod +x /entrypoint.sh \
+&& echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
+&& echo "export ROS_PACKAGE_PATH=~/catkin_ws:$ROS_PACKAGE_PATH" >> ~/.bashrc \
+&& echo "export ROS_WORKSPACE=~/catkin_ws" >> ~/.bashrc \
+&& echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc \
+&& echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
+&& . ~/.bashrc
+
+
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]

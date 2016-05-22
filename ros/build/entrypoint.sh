@@ -36,8 +36,8 @@ elif [ "$1" == "run" ]; then
 	exec $SRC/build/lidarserver
 fi
 
-mkdir -p /root/catkin_ws/src
-mkdir -p /root/src
+mkdir -p /home/builder/catkin_ws/src
+mkdir -p /home/builder/src
 
 exec bash
 
