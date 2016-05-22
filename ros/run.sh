@@ -32,4 +32,4 @@ docker run -d --name rosrpitest -it -v $VOL:$MOUNT -v $RESTVOL:$RESTMOUNT -v $CP
 -v $DBDIR:$DBMOUNT -p 9999:9999/udp -p 6000:6000/udp -p 9998:9998/udp -p 10000:10000 casper/ros $PAR
 #docker exec --user root rosrpitest /bin/sh -c "source /opt/ros/indigo/setup.sh;"
 
-docker exec -it --user root rosrpitest bash
+docker exec -it --user builder rosrpitest bash
