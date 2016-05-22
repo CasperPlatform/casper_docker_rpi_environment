@@ -44,7 +44,7 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 && . ~/.bashrc
 USER root
 COPY ./entrypoint.sh  / 
-RUN chmod +x /entrypoint.sh && apt-get -y install sudo
+RUN chmod +x /entrypoint.sh 
 
 WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
