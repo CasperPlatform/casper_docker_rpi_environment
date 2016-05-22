@@ -42,9 +42,9 @@ mkdir -p /home/builder/src
 chown -R builder:builder /home/builder
 chmod -R 755 /home/builder/src
 chmod -R 755 /home/builder/catkin_ws
-usermod -a -G root builder
+#usermod -a -G root builder
 usermod -a -G dialout builder
-sudo usermod -a -G sudo builder
+#sudo usermod -a -G sudo builder
 chmod 666 /dev/ttyUSB0
 exec roscore &
 #mkdir /home/builder/src/restful
