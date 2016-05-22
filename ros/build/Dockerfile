@@ -33,9 +33,10 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
 EXPOSE 6000/udp 9998/udp 9999/udp 10000
 RUN apt-get -y install python-pip python-dev && pip install flask flask-restful
 
+RUN chmod -R 755 /opt && chmod +x /entrypoint.sh 
 USER builder
-RUN chmod +x /entrypoint.sh \
-&& echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
+
+RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
 && echo "export ROS_PACKAGE_PATH=~/catkin_ws:$ROS_PACKAGE_PATH" >> ~/.bashrc \
 && echo "export ROS_WORKSPACE=~/catkin_ws" >> ~/.bashrc \
 && echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc \
