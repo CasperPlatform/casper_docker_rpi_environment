@@ -45,8 +45,14 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 USER root
 COPY ./assets/envi.sh /
 COPY ./entrypoint.sh / 
-COPY ./assets/buildsrc.sh  / 
-RUN chmod +x /entrypoint.sh && chmod +x /buildsrc.sh && chmod +x /envi.sh 
+COPY ./assets/buildLidar.sh / 
+COPY ./assets/runSlam.sh /
+COPY ./assets/runRest.sh /
+COPY ./assets/runVideo.sh /
+
+
+RUN chmod +x /entrypoint.sh && chmod +x /buildsrc.sh && chmod +x /envi.sh \
+chmod +x /runSlam.sh && chmod +x /runRest.sh && chmod +x /runVideo.sh
 
 
 WORKDIR /
