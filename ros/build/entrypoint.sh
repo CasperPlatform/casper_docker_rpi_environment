@@ -18,7 +18,7 @@ if [ "$1" == "buildrun" ]; then
 	fi	
 	exec roscore &
 	sleep 8
-	exec $LIDARSRC/build/lidarserver &
+	#exec $LIDARSRC/build/lidarserver &
 	echo "Building driveserver" >> /dev/stdout
 	cd $DRIVESRC && make
 	if [ ! -f $DRIVESRC/build/driveserver ]; then
