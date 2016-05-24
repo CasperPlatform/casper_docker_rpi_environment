@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /home/builder/src/cpp/videoserver
+exec /home/builder/src/cpp/buil/videoserver
