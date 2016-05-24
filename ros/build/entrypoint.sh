@@ -46,7 +46,7 @@ chmod -R 755 /home/builder/catkin_ws
 usermod -a -G dialout builder
 #sudo usermod -a -G sudo builder
 chmod 666 /dev/ttyUSB0
-exec roscore &
+#exec roscore &
 #mkdir /home/builder/src/restful
 #mkdir /home/builder/src/cpp
 #mkdir -p /root/cpp
