@@ -52,7 +52,7 @@ COPY ./assets/runVideo.sh /
 
 
 RUN chmod +x /entrypoint.sh && chmod +x /buildLidar.sh && chmod +x /envi.sh \
-chmod +x /runSlam.sh && chmod +x /runRest.sh && chmod +x /runVideo.sh
+&& chmod +x /runSlam.sh && chmod +x /runRest.sh && chmod +x /runVideo.sh
 
 
 WORKDIR /
