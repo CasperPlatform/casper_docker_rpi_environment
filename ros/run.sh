@@ -36,7 +36,7 @@ docker exec -d -it --user builder rosrpitest bash -v /runRest.sh
 sleep 2
 docker exec -d -it --user builder rosrpitest bash -v /runScore.sh 
 sleep 2
-docker exec -it --user builder rosrpitest bash -v /buildLidar.sh
+docker exec -d -it --user builder rosrpitest bash -v /buildLidar.sh
 sleep 2
 docker exec -it --user builder rosrpitest bash -v /runSlam.sh 
 sleep 2
