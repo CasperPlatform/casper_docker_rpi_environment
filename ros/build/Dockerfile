@@ -49,6 +49,7 @@ COPY ./assets/buildLidar.sh /
 COPY ./assets/runSlam.sh /
 COPY ./assets/runRest.sh /
 COPY ./assets/runVideo.sh /
+COPY ./assets/runScore.sh /
 
 
 RUN chmod +x /entrypoint.sh && chmod +x /buildLidar.sh && chmod +x /envi.sh \
