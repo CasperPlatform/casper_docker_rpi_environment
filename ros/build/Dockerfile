@@ -5,8 +5,7 @@ RUN update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX \
 > /etc/apt/sources.list.d/ros-latest.list \
 && apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116 
 RUN apt-get update && apt-get -y install \
-    libjpeg-dev \
-	ros-indigo-ros-base \
+    ros-indigo-ros-base \
 	python-rosdep \
     cmake \
     git \
@@ -17,6 +16,7 @@ RUN apt-get update && apt-get -y install \
     wget \
     unzip
 
+RUN apt-get -y install libjpeg-dev 
 COPY vc /opt/vc 
 RUN cd /tmp \
 && wget http://jaist.dl.sourceforge.net/project/raspicam/raspicam-0.1.3.zip \
