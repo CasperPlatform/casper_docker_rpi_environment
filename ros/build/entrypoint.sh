@@ -37,11 +37,12 @@ elif [ "$1" == "run" ]; then
 	
 fi
 
-mkdir -p /home/builder/catkin_ws/src
+mkdir -p /home/builder/catkin_ws/src/casper_lidar_scanner_driver
 mkdir -p /home/builder/src
 chown -R builder:builder /home/builder
 chmod -R 755 /home/builder/src
 chmod -R 755 /home/builder/catkin_ws
+cp -r /hector_slam-catkin /home/builder/catkin_ws/src/
 #usermod -a -G root builder
 usermod -a -G dialout builder
 #sudo usermod -a -G sudo builder

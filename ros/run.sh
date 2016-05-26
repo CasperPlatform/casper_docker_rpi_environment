@@ -6,7 +6,7 @@ BASEDIR="${PWD}"
 VOL=/home/data/casper/p0015
 RESTVOL=/home/data/casper/p0006
 CPPVOL=/home/data/casper/p0010
-MOUNT=/home/builder/catkin_ws/src
+MOUNT=/home/builder/catkin_ws/src/casper_lidar_scanner_driver
 RESTMOUNT=/home/builder/src/restful
 CPPMOUNT=/home/builder/src/cpp
 
