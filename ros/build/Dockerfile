@@ -13,7 +13,6 @@ RUN apt-get update && apt-get -y install \
     libboost-system-dev \
     libboost-thread-dev \
     build-essential \
-    ros-indigo-hector-slam \
     wget \
     unzip
 
