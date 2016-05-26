@@ -51,6 +51,7 @@ COPY ./assets/runSlam.sh /
 COPY ./assets/runRest.sh /
 COPY ./assets/runVideo.sh /
 COPY ./assets/runScore.sh /
+COPY ./assets/mapping_default.launch /opt/ros/indigo/share/hector_mapping/launch/mapping_default.launch
 
 
 RUN chmod +x /entrypoint.sh && chmod +x /buildLidar.sh && chmod +x /envi.sh \
