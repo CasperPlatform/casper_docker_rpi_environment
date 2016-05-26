@@ -6,3 +6,4 @@ source /opt/ros/indigo/setup.bash \
 && source devel/setup.bash \
 && rosrun casper_lidar_scanner_driver casper_lidar_scanner_driver 
 
+ 
