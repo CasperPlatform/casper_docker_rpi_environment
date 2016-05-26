@@ -7,6 +7,7 @@ RUN update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX \
 RUN apt-get update && apt-get -y install \
     libjpeg-dev \
 	ros-indigo-ros-base \
+    ros-indigo-rviz \
 	python-rosdep \
     cmake \
     git \
@@ -14,7 +15,8 @@ RUN apt-get update && apt-get -y install \
     libboost-thread-dev \
     build-essential \
     wget \
-    unzip
+    unzip 
+    
 
 COPY vc /opt/vc 
 RUN cd /tmp \
