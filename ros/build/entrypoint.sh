@@ -37,7 +37,7 @@ elif [ "$1" == "run" ]; then
 	
 fi
 
-su -m builder -c /ros_permissions.sh
+su -m builder -c /assets/ros_permissions.sh
 mkdir -p /home/builder/catkin_ws/src/casper_lidar_scanner_driver
 mkdir -p /home/builder/src
 chown -R builder:builder /home/builder
