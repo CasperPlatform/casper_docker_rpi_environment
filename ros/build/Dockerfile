@@ -56,7 +56,7 @@ COPY ./assets/runVideo.sh /assets/
 COPY ./assets/runScore.sh /assets/
 COPY ./assets/mapping_default.launch /assets/
 COPY ./assets/hector_slam-catkin /hector_slam-catkin
-COPY ./assets/ros_permissions.sh /assets/
+COPY ./assets/ros_permissions.sh  /assets/
 
 
 RUN chmod +x /entrypoint.sh && chmod -R +x /assets 
