@@ -2,4 +2,4 @@
 
 sudo rosdep fix-permissions \
 && sudo rosdep init \
-&& rosdep update
+&& sudo rosdep update
