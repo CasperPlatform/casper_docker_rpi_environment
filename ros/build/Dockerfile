@@ -61,8 +61,5 @@ COPY ./assets/ros_permissions.sh /assets/
 
 RUN chmod +x /entrypoint.sh && chmod -R +x /assets 
 
-
-
-WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
