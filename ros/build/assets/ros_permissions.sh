@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rosdep fix-permissions \
-&& rosdep init \
-&& rosdep update
+sudo rosdep fix-permissions \
+&& sudo rosdep init \
+&& sudo rosdep update
