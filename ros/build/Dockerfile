@@ -27,7 +27,7 @@ RUN cd /tmp \
 
 
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh && apt-get -y install sudo \
 && adduser --disabled-password --gecos "" builder \
 && adduser builder sudo \
 && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
@@ -60,7 +60,7 @@ COPY ./assets/ros_permissions.sh /assets/
 
 
 RUN chmod +x /entrypoint.sh && chmod -R +x /assets \
-&& apt-get -y install sudo
+
 
 
 WORKDIR /
