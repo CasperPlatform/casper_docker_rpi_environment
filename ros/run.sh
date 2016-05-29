@@ -3,9 +3,9 @@
 
 cd $(dirname $0)
 BASEDIR="${PWD}"
-VOL=/home/data/casper/p0015
-RESTVOL=/home/data/casper/p0006
-CPPVOL=/home/data/casper/p0010
+VOL=/home/data/casper/c++/p0015
+RESTVOL="/home/data/casper/python/p0006"
+CPPVOL=/home/data/casper/c++/p0010
 MOUNT=/home/builder/catkin_ws/src/casper_lidar_scanner_driver
 RESTMOUNT=/home/builder/src/restful
 CPPMOUNT=/home/builder/src/cpp
@@ -22,7 +22,7 @@ fi
 USBDIR=/dev/ttyUSB0
 USBMOUNT=/dev/ttyUSB0
 
-DBDIR=/home/data/casper/db.db
+DBDIR=/home/data/db.db
 DBMOUNT=/home/builder/db.db
 
 docker stop rosrpitest && docker rm rosrpitest
