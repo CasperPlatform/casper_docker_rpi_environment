@@ -42,7 +42,7 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 && echo "export ROS_PACKAGE_PATH=~/catkin_ws:$ROS_PACKAGE_PATH" >> ~/.bashrc  \
 && echo "export ROS_WORKSPACE=~/catkin_ws" >> ~/.bashrc   \
 && echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc    \
-&& echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
+&& echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc  \
 && . ~/.bashrc 
 
 
@@ -56,7 +56,7 @@ COPY ./assets/runVideo.sh /assets/
 COPY ./assets/runScore.sh /assets/
 COPY ./assets/mapping_default.launch /assets/
 COPY ./assets/hector_slam-catkin /hector_slam-catkin
-COPY ./assets/ros_permissions.sh  /assets/
+COPY ./assets/ros_permissions.sh /assets/
 
 
 RUN chmod +x /entrypoint.sh && chmod -R +x /assets 
