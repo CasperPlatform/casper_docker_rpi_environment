@@ -59,7 +59,8 @@ COPY ./assets/hector_slam-catkin /hector_slam-catkin
 COPY ./assets/ros_permissions.sh /assets/
 
 
-RUN chmod +x /entrypoint.sh && chmod -R +x /assets
+RUN chmod +x /entrypoint.sh && chmod -R +x /assets \
+&& apt-get -y install sudo
 
 
 WORKDIR /
