@@ -24,13 +24,13 @@ RUN cd /tmp \
 && unzip raspicam-0.1.3.zip -d . && cd raspicam-0.1.3 && chmod -R 755 /tmp/raspicam-0.1.3 \
 && mkdir build && cd build && cmake .. \
 && make && make install && ldconfig
-RUN rosdep fix-permissions \
-	&& rosdep init \
-    && rosdep update
+
 
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
-&& adduser --disabled-password --gecos "" builder
+&& adduser --disabled-password --gecos "" builder \
+&& adduser builder sudo \
+&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 EXPOSE 6000/udp 9998/udp 9999/udp 10000
 RUN apt-get -y install python-pip python-dev && pip install flask flask-restful
@@ -43,21 +43,23 @@ RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc  \
 && echo "export ROS_WORKSPACE=~/catkin_ws" >> ~/.bashrc   \
 && echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc    \
 && echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc \
-&& . ~/.bashrc
+&& . ~/.bashrc \
+&& mkdir /assets
+
 USER root
-COPY ./assets/envi.sh /
+COPY ./assets/envi.sh /assets/
 COPY ./entrypoint.sh / 
-COPY ./assets/buildLidar.sh / 
-COPY ./assets/runSlam.sh /
-COPY ./assets/runRest.sh /
-COPY ./assets/runVideo.sh /
-COPY ./assets/runScore.sh /
-COPY ./assets/mapping_default.launch /
+COPY ./assets/buildLidar.sh /assets/ 
+COPY ./assets/runSlam.sh /assets/
+COPY ./assets/runRest.sh /assets/
+COPY ./assets/runVideo.sh /assets/
+COPY ./assets/runScore.sh /assets/
+COPY ./assets/mapping_default.launch /assets/
 COPY ./assets/hector_slam-catkin /hector_slam-catkin
+COPY ./assets/ros_permissions.sh /assets/
 
 
-RUN chmod +x /entrypoint.sh && chmod +x /buildLidar.sh && chmod +x /envi.sh \
-&& chmod +x /runSlam.sh && chmod +x /runRest.sh && chmod +x /runVideo.sh
+RUN chmod +x /entrypoint.sh && chmod -R +x /assets
 
 
 WORKDIR /
